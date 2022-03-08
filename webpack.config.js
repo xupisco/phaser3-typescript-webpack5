@@ -6,15 +6,15 @@ const { CleanWebpackPlugin } = require('clean-webpack-plugin');
 module.exports = {
     mode: 'development',
     devtool: 'inline-source-map',
-    
+
     entry: {
         game: "./src/js/game.ts"
     },
-    
+
     resolve: {
         extensions: ['.ts', '.tsx', '.js', '.scss'],
     },
-    
+
     module: {
         rules: [
             {
@@ -41,16 +41,18 @@ module.exports = {
             'typeof WEBGL_RENDERER': JSON.stringify(true)
         }),
     ],
-    
+
     output: {
         filename: "[name].bundle.js",
         path: path.resolve(__dirname, './dist'),
     },
-    
+
     devServer: {
-        contentBase: path.resolve(__dirname, './'),
-        publicPath: './dist',
-        writeToDisk: true
+        static: path.resolve(__dirname, './'),
+        devMiddleware: {
+            publicPath: './dist',
+            writeToDisk: true
+        }
     }
-    
+
 };
