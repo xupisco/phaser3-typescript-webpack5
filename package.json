@@ -1,7 +1,7 @@
 {
   "name": "updated_with_ts",
   "version": "1.0.0",
-  "main": "./js/game.ts",
+  "main": "./ts/game.ts",
   "license": "MIT",
   "scripts": {
     "start": "yarn run webpack --watch --progress --mode development",
