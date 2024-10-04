@@ -18,14 +18,14 @@ export class SampleScene extends Phaser.Scene {
 
     public create() {
         const particles = this.add.particles(0, 0, 'red', {
-            speed: 100,
-            scale: { start: 1, end: 0 },
+            speed: 150,
+            scale: { start: 0.5, end: 0 },
             blendMode: 'ADD'
         });
 
         const logo = this.physics.add.image(400, 100, 'logo');
 
-        logo.setVelocity(510, 200);
+        logo.setVelocity(500, 500);
         logo.setBounce(1, 1);
         logo.setCollideWorldBounds(true);
 
